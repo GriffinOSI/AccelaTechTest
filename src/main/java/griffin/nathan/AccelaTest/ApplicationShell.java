@@ -55,7 +55,7 @@ public class ApplicationShell {
         personService.deleteAddress(id);
     }
 
-    @ShellMethod(value = "Print the total number of people in the database", key = "count people")
+    @ShellMethod(value = "Print the total number of people in the database", key = "count-people")
     public void countPeople() {
         System.out.println("There are " + personService.countTotalPeople() + " people in the database");
     }
