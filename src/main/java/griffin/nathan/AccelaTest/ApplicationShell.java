@@ -1,16 +1,10 @@
 package griffin.nathan.AccelaTest;
 
-import griffin.nathan.AccelaTest.model.Address;
-import griffin.nathan.AccelaTest.model.Person;
 import griffin.nathan.AccelaTest.service.PersonService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.shell.standard.ShellComponent;
 import org.springframework.shell.standard.ShellMethod;
 import org.springframework.shell.standard.ShellOption;
-
-import javax.validation.constraints.Null;
-import java.util.HashSet;
-import java.util.Set;
 
 @ShellComponent
 public class ApplicationShell {
@@ -74,6 +68,10 @@ public class ApplicationShell {
     @ShellMethod(value = "Add example values to database", key = "demo")
     public void demo() {
         personService.addPerson(1L, "Jim", "Jam");
-        personService.addAddressToPerson(1L, 1L, "123", "234", "3sdas", "2323");
+        personService.addAddressToPerson(1L, 1L, "17 Harland Street", "Belfast", "Ireland", "BT43 4SD");
+        personService.addAddressToPerson(1L, 2L, "Dooley Avenue", "Cork", "Ireland", "12332");
+        personService.addPerson(2L, "Jane", "Doe");
+        personService.addPerson(3L, "Craig", "David");
+        personService.addAddressToPerson(3L, 3L, "Electric Avenue", "Timbuktu", "Swaziland", "23123");
     }
 }

@@ -10,6 +10,7 @@ import java.util.Set;
 @Table(name = "person")
 public class Person {
     @Id
+    //@GeneratedValue(strategy = GenerationType.TABLE)
     private long id;
     private String firstName;
     private String lastName;
