@@ -14,3 +14,6 @@ To run
 - list people: List all people in the database
 - count people: Print the total number of people in the database
 - demo: Add example values to database
+
+## Notes:
+- Setters/Getters will look broken in an IDE without lombok configured
