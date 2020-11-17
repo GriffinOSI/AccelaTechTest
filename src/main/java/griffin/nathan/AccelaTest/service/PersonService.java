@@ -6,7 +6,6 @@ import griffin.nathan.AccelaTest.model.Address;
 import griffin.nathan.AccelaTest.model.Person;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-import org.springframework.stereotype.Service;
 
 @Component
 public class PersonService {
@@ -27,6 +26,8 @@ public class PersonService {
         return personRepository.findById(id).get();
     }
 
+    // Console passes in values as either empty strings or valid values
+    // Only update the object with non empty values
     public void editPerson(Long id, String firstName, String lastName) {
         if(personExists(id)) {
             Person personToEdit = personRepository.findById(id).get();
@@ -59,6 +60,8 @@ public class PersonService {
         personRepository.save(personToEdit);
     }
 
+    // Console passes in values as either empty strings or valid values
+    // Only update the object with non empty values
     public void editAddress(Long addressId, String street, String city, String state, String postalCode) {
         if(addressRepository.findById(addressId).isPresent()) {
             Address addressToEdit = addressRepository.findById(addressId).get();
